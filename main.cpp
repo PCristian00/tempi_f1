@@ -14,6 +14,10 @@ giro tempi[NUMERO_PILOTI];
 void leggiFile(const char nomefile[]) {
     fstream file;
     file.open(nomefile, ios::in);
+    if (!file) {
+        cout <<nomefile<<" NON TROVATO!"<<endl;
+        exit(1);   // call system to stop
+    }
     for(int i=0;i<NUMERO_PILOTI;i++){
         file>>tempi[i].pilota;
         file>>tempi[i].tempo;
@@ -63,7 +67,7 @@ for(int i=0;i<n;i++)
 
 // Programma principale: mostra il menù e chiama le altre funzioni.
 int main() {
-    //TODO mettere solo "tempi.txt" non funziona
+    //TODO mettere solo "tempi.txt" pare non funzionare, modificare questo indirizzo con il path assoluto sul tuo terminale
     char filename[]="C:\\Users\\Thinkpad User\\CLionProjects\\tempi_f1\\tempi.txt";
 
     leggiFile(filename);
