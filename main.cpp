@@ -46,6 +46,11 @@ uguale a “nomePilota”, lo stampa a schermo, indicandone posizione e tempo.
 Altrimenti avvisa l'utente che “nomePilota” non è presente nel vettore. */
 void stampaPilota(giro giri[], int n, char nomePilota[]) {
     //posizione del pilota trovato
+   //cout<<nomePilota<<endl;
+    strlwr(nomePilota);
+    //cout<<nomePilota<<endl;
+    nomePilota[0]=toupper(nomePilota[0]);
+    //cout<<nomePilota<<endl;
     int pf=-1;
 for(int i=0;i<n;i++)
     if(strcmp(giri[i].pilota,nomePilota)==0) pf=i;
